@@ -1,25 +1,33 @@
-#include<stdio.h>
-#include<conio.h>
-int gcd(int m,int n)
-{
-    if(n==0)
-    {
-        return m;
-    }
-    else if(m<n)
-    {
-        return(n,m);
-    }
-    else
-    {
-        return gcd(n,m%n);
-    }
-}
+#include <stdio.h>
+#include <time.h>
+
+void delay();
+int gcd(int x,int y);
+
 void main()
 {
-    int m,n,ans;
-    printf("Enter the two numbers \n");
-    scanf("%d %d",&m,&n);
-    ans=gcd(m,n);
-    printf("GCD=%d",ans);
+    int a,b,c;
+    clock_t start,end;
+    printf("Enter two numbers: ");
+    scanf("%d%d",&a,&b);
+    start= clock();
+    delay();
+    c=gcd(a,b);
+    end= clock();
+    printf("The gcd of two numbers is %d\n",c);
+    printf("The time taken is %lf seconds",((double)(end-start)/CLOCKS_PER_SEC));
+}
+void delay(){
+    long i;
+    for(i=0;i<10000000;i++);
+}
+int gcd(int x,int y){
+    int z;
+    if(y==0)
+        return x;
+    z=x%y;
+    x=y;
+    y=z;
+    delay();
+    return gcd(x,y);
 }

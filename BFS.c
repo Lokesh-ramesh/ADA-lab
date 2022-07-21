@@ -6,7 +6,7 @@ int a[10][10],n;
 
 void bfs(int); 
 
-void main() 
+int main() 
 
 { 
 
@@ -37,6 +37,7 @@ void main()
  printf("\nenter the source node:\t"); 
  scanf("%d",&src); 
  bfs(src); 
+ return 0;
 } 
 void bfs(int src) {
  int q[10],f=0,r=-1,vis[10],i,j; 

@@ -3,7 +3,7 @@
 #include<stdlib.h> /* To recognise exit function when compiling with gcc*/
 void selsort(int n,int a[]);
 
-void main()
+int main()
 {
    int a[15000],n,i,j,ch,temp;
    clock_t start,end;
@@ -51,7 +51,7 @@ printf("\n Time taken to sort %d numbers is %f Secs",n, (((double)(end-start))/C
 	      break;
    case 3: exit(0);
    }
-   getchar();
+   return 0;
     }
 }
 

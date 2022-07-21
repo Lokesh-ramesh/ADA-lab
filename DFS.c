@@ -6,7 +6,7 @@ int a[10][10],n,vis[10];
 
 int dfs(int); 
 
-void main() 
+int main() 
 
 { 
 
@@ -64,7 +64,7 @@ void main()
 
  } 
 
- getch(); 
+ return 0;
 
 } 
 
